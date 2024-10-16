@@ -67,7 +67,7 @@ $Gatti = new Category ('Gatti','🐈');
 $prodottoPerGatti = new Product (
     'Prodotto per Gatti',
     12.15,
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmAnxkd40t8ikKd87z8WlLglsD0pFgNBjndg&s',
+    'https://i.ebayimg.com/images/g/Qd8AAOSwnedlHVi2/s-l400.png',
     $Gatti
 );
 
@@ -76,7 +76,7 @@ $prodottoPerGatti = new Product (
 $ciboPerGatti = new Food (
     'Cibo per Gatti',
     18.99,
-    'https://www.brekz.it/44262/large_default.jpg',
+    'https://cdn.manomano.com/oasy-delizioso-pate-con-pollo-puppyjunior-per-cuccioli-da-150-gr-P-5040562-12287478_1.jpg',
     $Gatti,
     'Manzo, Carote, Olio, Acqua'
 );
@@ -84,7 +84,7 @@ $ciboPerGatti = new Food (
 
 
 $cucciaPerGatti = new PetBed (
-    'cuccia per Gatti',
+    'Cuccia per Gatti',
     24.99,
     'https://images.epto.it/immagini/big/vdl/VX170970_01.jpg',
     $Gatti,
@@ -94,7 +94,7 @@ $cucciaPerGatti = new PetBed (
 
 $prodottoPerCani = new Product (
     'Prodotto per Cani',
-    11,35,
+    11.35,
     'https://it.zooexperte.com/image/cache/catalog/Der_Zoo_Exsperte/Products/Dental/Dental-Spray/zahnpflege-dental-spray-dog-800x800.jpg',
     $Cani
 );
@@ -113,7 +113,7 @@ $ciboPerCani = new Food (
 
 $cucciaPerCani = new PetBed (
     'Cuccia per Cani',
-    27,49,
+    27.49,
     'https://legnonaturale.com/wp-content/uploads/2020/12/cucce-per-cani-1.jpg',
     $Cani,
     'Medium'
@@ -127,6 +127,7 @@ $products = [
     $ciboPerCani,
     $cucciaPerCani
 ];
+
 ?>
 
 
@@ -167,12 +168,21 @@ $products = [
         <div class='container'>
             <div class='row g-3'>
                 <?php
-                foreach ($products as $product){
+                foreach ($products as $product) {
                 ?>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card">
+                <div class="col-4 py-3">
+                    <div class="card h-100">
+                        <img src="<?php echo $product ->img; ?>" class="card-img-top" alt="<?php echo $product ->title; ?>">
                         <div class="card-body">
-
+                        <h2>
+                            <?php echo $product ->title; ?>   
+                        </h2>
+                        <h6>
+                           
+                        </h6>
+                        <h5>
+                            £ <?php echo $product ->price; ?> 
+                        </h5>
                         </div>
                     </div>
                 </div>
